@@ -1,4 +1,4 @@
-# JI-FrontEnd-RestAPI-JS-PHP
+# JI-FrontEnd-TODO-RestAPI-JS-PHP
 
 This is a TODO mock project where a user should be able to register and track progress of tasks.
 
