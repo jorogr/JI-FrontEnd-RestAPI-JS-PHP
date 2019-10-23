@@ -1,0 +1,188 @@
+// DEFINE VARIABLES - START
+$white: #fff;
+$black: #000;
+$light_grey: #ddd;
+$lighter_grey: #f2f2f2;
+$red: #ff3300;
+
+$main_background: $white;
+$header_background: $black;
+$footer_background: $black;
+$warn_color: $red;
+$table_borders: $light_grey;
+$table_even_background: $lighter_grey;
+// DEFINE VARIABLES - STOP
+
+
+// DEFINE MIXINS - START
+@mixin header_elements {
+    height: 50px;
+    line-height: 50px;        
+}
+
+@mixin button {
+    margin: 0px 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
+    font: 15px;
+    line-height: 35px;
+    background: $header_background;
+    color: $main_background;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.85;
+    }
+}
+// DEFINE MIXINS - STOP
+
+
+@mixin footer_elements {
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0px 10px 0px 10px;
+}
+
+// Element Type-based Styling - START
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+}
+
+header {
+    @include header_elements;
+    background: $header_background;
+    color: $main_background;
+}
+
+footer {
+    height: 30px;
+    width: 100%;
+    background: $footer_background;
+    color: $main_background;
+    position: fixed;
+    bottom: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  & td, th {
+    border: 1px solid $table_borders;
+    padding: 8px;
+  }
+  & tr:nth-child(even) {
+    background-color: $table_even_background;
+  }
+  & tbody tr:hover {
+    background-color: $table_borders;
+  }
+  & thead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: $header_background;
+    color: $main_background;
+  }
+}
+
+input[type=text] {
+    width: 80%;
+    background: $main_background;
+    border: 1px solid $table_borders;
+    padding: 2px;
+}
+// Element Type-based Styling - STOP
+
+
+// Element ID-based styling - START
+#page_wrapper {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+#logo_text {
+    font-size: 40px;
+}
+
+#sign_buttons {
+    font-size: 20px;
+}
+
+#list_wrapper {
+    margin: 20px 30px 50px 30px;
+    text-align: center;
+    overflow: auto;
+}
+
+#title_wrapper {
+    width: 100%;
+}
+
+#list_title {
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+#add_item {
+    @include button;
+    
+}
+
+#clear_list {
+    @include button;
+    
+}
+
+#copyright {
+    @include footer_elements;
+}
+
+#author {
+    @include footer_elements;
+}
+// Element ID-based styling - STOP
+
+
+// Element Class-based Styling - START
+.button {
+    @include button;
+}
+
+.button-alt {
+    @include button;
+    background: $main_background !important;
+    color: $header_background !important;
+}
+
+.button-warn {
+    @include button;
+    background: $warn_color !important;
+}
+
+.header_elements {
+    padding: 0px 15px 0px 15px;
+}
+
+.display-inline {
+    display: inline-block !important;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.state-new-item {
+    color: $warn_color;
+}
+
+.state-done-item {
+    color: green;
+}
+// Element Class-based Styling - STOP
